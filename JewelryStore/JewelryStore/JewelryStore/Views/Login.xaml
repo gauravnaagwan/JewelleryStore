@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:control="clr-namespace:JewelryStore.Control"
+             xmlns:VM="clr-namespace:JewelryStore.ViewModels"
+             mc:Ignorable="d"
+             x:Class="JewelryStore.Views.Login">
+    <ContentPage.BindingContext >
+        <VM:LoginViewModel>
+
+        </VM:LoginViewModel>
+
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+
+
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="30" VerticalOptions="CenterAndExpand" >
+            <Image Source="Loginlogo.png"/>
+            <Label Text="Please enter your email to login" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+            <Frame Padding="20,2,30,2" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HasShadow="False" BorderColor="#3498DB" CornerRadius="20" >
+                <control:CustomEntry x:Name="Email" Text="{Binding Email}" Placeholder="Email*"   
+                           PlaceholderColor="Gray" HeightRequest="45"   
+                           Keyboard="Email"
+                           TextColor="Black" VerticalOptions="Start"/>
+
+            </Frame>
+
+            <Frame Padding="20,2,30,2" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HasShadow="False" BorderColor="#3498DB" CornerRadius="20" >
+                <control:CustomEntry x:Name="Password" Text="{Binding Email}" Placeholder="Password*"   
+                           PlaceholderColor="Gray" HeightRequest="45"
+                           TextColor="Black" VerticalOptions="Start" IsPassword ="True" />
+
+            </Frame>
+
+            <StackLayout Grid.Column="1" Spacing="0">
+                <Button Command="{Binding LoginCommand}" Text="LOGIN" TextColor="White"  
+                    FontAttributes="Bold" FontSize="16" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="Black" BorderWidth="2" HeightRequest="50" CornerRadius="20"/>
+               
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
